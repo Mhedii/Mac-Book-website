@@ -6,13 +6,17 @@ secondStorage.onclick = Update;
 thirdStorage.onclick = Update;
 regular.onclick = Update;
 fast.onclick = Update;
+totalPrice.onchange = Update;
+finalPrice.onchange = Update;
 
 
 document.getElementById('secondMemory').addEventListener('click', function () {
     const memoryPrice = document.getElementById('memoryCost');
+
+    memoryPrice.innerText = "$" + 180;
     console.log(12);
     memoryPrice.value = 180;
-    memoryPrice.innerText = "$" + 180;
+
 
 })
 document.getElementById('firstMemory').addEventListener('click', function () {
@@ -22,24 +26,24 @@ document.getElementById('firstMemory').addEventListener('click', function () {
     memoryPrice.innerText = "$" + 0;
 
 })
-//Update();
+
 document.getElementById('firstStorage').addEventListener('click', function () {
     const storagePrice = document.getElementById('storageCost');
-    console.log(12);
+
     storagePrice.value = 0;
     storagePrice.innerText = "$" + 0;
 
 })
 document.getElementById('secondStorage').addEventListener('click', function () {
     const storagePrice = document.getElementById('storageCost');
-    console.log(12);
+
     storagePrice.value = 100;
     storagePrice.innerText = "$" + 100;
 
 })
 document.getElementById('thirdStorage').addEventListener('click', function () {
     const storagePrice = document.getElementById('storageCost');
-    console.log(12);
+
     storagePrice.value = 180;
     storagePrice.innerText = "$" + 180;
 
@@ -47,21 +51,41 @@ document.getElementById('thirdStorage').addEventListener('click', function () {
 
 document.getElementById('fast').addEventListener('click', function () {
     const deliveryCost = document.getElementById('delivery');
-    console.log(12);
+
     deliveryCost.value = 20;
     deliveryCost.innerText = "$" + 20;
 
 })
 document.getElementById('regular').addEventListener('click', function () {
     const deliveryCost = document.getElementById('delivery');
-    console.log(12);
+
     deliveryCost.value = 20;
     deliveryCost.innerText = "$" + 0;
 
 })
+document.getElementById('totalPrice').addEventListener('change', function () {
+    const totalPrice = document.getElementById('totalPrice');
 
 
-console.log(23)
+    totalPrice.innerText = "$" + totalPrice;
+
+})
+document.getElementById('finalPrice').addEventListener('change', function () {
+    const finalPrice = document.getElementById('finalPrice');
+
+    finalPrice.value = 20;
+    finalPrice.innerText = "$" + finalPrice;
+
+})
+document.getElementById('promo').addEventListener('change', function () {
+    const code = document.getElementById('promo');
+
+
+})
+
+
+
+Update();
 function Update() {
 
 
@@ -84,18 +108,21 @@ function Update() {
     document.getElementById('totalPrice').innerText = "$" + parseInt(totalPrice);
 
     totalPrice.innerText = "$" + parseInt(totalPrice);
+    document.getElementById('finalPrice').innerText = "$" + parseInt(totalPrice);
+
+    finalPrice.innerText = "$" + parseInt(totalPrice);
     return totalPrice;
 
 
 }
-Update();
+
 function Promo(promo) {
     // let finalPrice = document.getElementById('totalPrice');
     document.getElementById('promoBtn').addEventListener('click', function () {
-        if (promo != "stevekaku") {
+        const code = document.getElementById('promo');
+        if (code == "stevekaku") {
             let finalPrice = Update();
             document.getElementById('finalPrice').innerText = "$" + parseInt(finalPrice);
-            alert(sd);
             document.getElementById('finalPrice').innerText = "$" + Update();
 
 
