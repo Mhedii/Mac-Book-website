@@ -1,0 +1,15 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.price{
+    display: flex;
+    
+}
+.Total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    
+}
